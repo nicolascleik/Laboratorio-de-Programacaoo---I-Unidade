@@ -1,6 +1,5 @@
 import pytest
-from app.calculadora_obras import calcular_area_em_m2
-from app.calculadora_obras import calcular_tijolos_por_parede
+from app.calculadora_obras import calcular_area_em_m2, calcular_tijolos_por_parede
 
 # ==========================================
 # MÓDULO: ALVENARIA E ESTRUTURA
