@@ -88,7 +88,7 @@ def calcular_sacos_cimento(volume_concreto_m3, rendimento_saco_m3):
         #Impede que qualquer valor seja menor ou igual a 0
         return 'Nenhum dos parâmetros deve ser menor ou igual a 0'
     
-    qnt_sacos = math.ceil(volume_concreto_m3 * rendimento_saco_m3)
+    qnt_sacos = math.ceil(volume_concreto_m3 / rendimento_saco_m3)
     #Calcula e retorna o volume
     return qnt_sacos
 
