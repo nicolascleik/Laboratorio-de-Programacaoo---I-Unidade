@@ -1,6 +1,6 @@
 # ==========================================
 # MÓDULO: ALVENARIA E ESTRUTURA
-# Responsáveis: Nicolas Cleik ; SEU_NOME
+# Responsáveis: Nicolas Cleik ; Ana Clara ;
 # ==========================================
 
 def calcular_area_em_m2(altura, comprimento):
@@ -53,6 +53,44 @@ def calcular_tijolos_por_parede(area_parede_m2, area_tijolo_m2):
     quantidade_de_blocos = round((area_parede_m2 / area_tijolo_m2), 2)
 
     return quantidade_de_blocos
+
+def calcular_volume_concreto(largura_m, comprimento_m, espessura_m):
+    #Calcula o volume total de uma superfície em m³
+    
+    """
+    Parâmetros:
+    largura_m: largura em metros
+    comprimento_m: comprimento em metros
+    espessura_m: espessura em metros
+    volume: retorno do volume da superfície em m³
+    """
+
+    if largura_m <= 0 or comprimento_m <= 0 or espessura_m <= 0:
+        #Impede que qualquer valor seja menor ou igual a 0
+        return 'Nenhum dos parâmetros deve ser menor ou igual a 0'
+    
+    volume = largura_m * comprimento_m * espessura_m
+    #Calcula e retorna o volume
+    return volume
+
+
+def calcular_sacos_cimento(volume_concreto_m3, rendimento_saco_m3):
+    #Calcula quantidade de sacos de cimento que serão ultilizados na obra
+    
+    """
+    Parâmetros:
+    volume_concreto_m3: volume da superfície em m³
+    rendimento_saco_m3: rendimento de um saco de cimento por m³
+    qnt_sacos: retorna a quantidade de sacos necessitados
+    """
+
+    if volume_concreto_m3 <= 0 or rendimento_saco_m3 <= 0:
+        #Impede que qualquer valor seja menor ou igual a 0
+        return 'Nenhum dos parâmetros deve ser menor ou igual a 0'
+    
+    qnt_sacos = math.ceil(volume_concreto_m3 * rendimento_saco_m3)
+    #Calcula e retorna o volume
+    return qnt_sacos
 
 # ==========================================
 # MÓDULO: ACABAMENTO E PINTURA
