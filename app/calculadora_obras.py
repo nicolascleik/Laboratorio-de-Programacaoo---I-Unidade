@@ -153,5 +153,48 @@ def calcular_litros_tinta(area_pintura_m2, rendimento_lata_m2, quantidade_demaos
     return qtd_latas
 # ==========================================
 # MÓDULO: LOGISTICA E ORÇAMENTO
-# Responsáveis: SEU_NOME
+# Responsáveis: Felipe
 # ==========================================
+def calcular_frete_entrega(distancia_km, peso_carga_kg):
+    """
+    Calcula o frete de uma entrega baseado na distancia e peso da carga, R$ 2,00 por KM + R$ 0,50 por KG.
+    Args:
+        distancia_km (float): A distancia que será percorrida em KM.
+        peso_carga_kg (float): O peso que será transportado em KG.
+    Returns:
+        float: O preço do frete arredondado.
+    """
+    try:
+        distancia = float (distancia_km)
+        peso = float (peso_carga_kg)
+    except ValueError:
+        raise TypeError("Digite um numero valido (positivo e maior que zero)")
+    
+    if distancia <=0 or peso <=0:
+        raise ValueError("Os numeros de distancia e peso devem ser maiores que zero")
+    
+    frete = (distancia * 2) + (peso * 0.5)
+
+    return round(frete, 2)
+
+def capacidade_caminhao(peso_total_pedido_kg, capacidade_maxima_veiculo_kg):
+    """
+    Verifica se o peso total cabe na capacidade do caminhão.
+    Args:
+        peso_total_pedido_kg (float): O peso total do pedido.
+        capacidade_maxima_veiculo_kg (float): A capacidade maxima que pode ser transportada pelo caminhão.
+    Returns:
+        bool: True se couber, False se exceder.
+    """
+    try:
+        peso = float (peso_total_pedido_kg)
+        capacidade = float (capacidade_maxima_veiculo_kg)
+    except ValueError:
+        raise TypeError("Digite um numero valido (positivo e maior que zero)")
+    
+    if peso <=0 or capacidade <=0:
+        raise ValueError("digite um numero maior que zero")
+    
+    pode_carregar = capacidade >= peso
+
+    return pode_carregar
