@@ -1,5 +1,3 @@
-# Laborat-rio-de-Programa-o---I-Unidade
-
 # Projeto: Cálculos para Construção Civil
 
 ## Descrição do Projeto
